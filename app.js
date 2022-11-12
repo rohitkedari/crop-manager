@@ -1,0 +1,57 @@
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+
+const indexRouter = require('./routes/index');
+const oauthRouter = require('./routes/oauth');
+const usersRouter = require('./routes/users');
+const organizationsRouter = require('./routes/organization');
+const cropsRouter = require('./routes/crop');
+const propertiesRouter = require('./routes/property');
+const regionsRouter = require('./routes/region');
+const cropCyclesRouter = require('./routes/cropCycle');
+
+const app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/oauth', oauthRouter);
+app.use('/users', usersRouter);
+app.use('/organizations', organizationsRouter);
+app.use('/crops', cropsRouter);
+app.use('/properties', propertiesRouter);
+app.use('/regions', regionsRouter);
+app.use('/crop-cycles', cropCyclesRouter);
+
+// catch 404 and forward to error handler
+app.use((req, res, next) => {
+  next(createError(404));
+});
+
+// error handler
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  console.log(err);
+  const { stack, name, ...rest } = err;
+  const error =
+    req.app.get('env') === 'development'
+      ? { ...rest, name, stack }
+      : { ...rest };
+
+  // render the error page
+  res.status(err.status || 500);
+  res.json(error);
+});
+
+module.exports = app;
