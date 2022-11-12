@@ -1,10 +1,10 @@
 # crop-manager
 NodeJS, Express, Oauth-2, PostgreSQL, Sequelize Demo
 
-# Entity Relationship Diagram
+## Entity Relationship Diagram
 ![Component Generation Sample](entity_relationship_dig.png)
 
-# Local Setup
+## Local Setup
 -   <code>git clone https://github.com/rohitkedari/crop-manager.git</code>: clone repo
 -   <code>npm i</code>: install node dependency
 -   install PostgreSQL and create DB crop_manager
