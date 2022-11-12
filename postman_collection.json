@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "d781b1cc-a8fb-442d-86b1-2ea58e8467c7",
+		"name": "crop_manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Oauth Client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientId\": \"client_dev\",\r\n    \"clientSecret\": \"client_dev_secret\",\r\n    \"redirectUris\": \"http://localhost:3000/oauth/callback\",\r\n    \"grants\": [\"password\", \"refresh_token\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/oauth/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"oauth",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test1@test.com\",\r\n    \"password\": \"test123\",\r\n    \"name\": \"test1 user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Oauth Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "client_dev_secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "client_dev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "test1@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test123",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Organization",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"TestOrg1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/organizations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Organization",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/organizations/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"organizations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Organization List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/organizations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Crop",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"crop1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/crops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Crop",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/crops/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crops",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Crop list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/crops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Property",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Property3\",\r\n    \"address\": \"Pune\",\r\n    \"orgId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/properties",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Property",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/properties/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"properties",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Property list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/properties",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Crop Cycle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Crop Cycle 2\",\r\n    \"startDay\": \"2022-11-12\",\r\n    \"endDay\": \"2023-04-12\",\r\n    \"cropId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/crop-cycles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crop-cycles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Crop Cycle",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/crop-cycles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crop-cycles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Crop Cycle List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/crop-cycles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crop-cycles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Region",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"region 1\",\r\n    \"lat\": 1234.12,\r\n    \"lon\": \"3434.12\",\r\n    \"area\": 100.00,\r\n    \"propertyId\": 1,\r\n    \"isField\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/regions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Region",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/regions/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regions",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Regions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/regions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Field",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 721326671114d59d326e4c71a59594e3a97a84b3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Field5\",\r\n    \"lat\": 1234.12,\r\n    \"lon\": \"3434.12\",\r\n    \"area\": 100.00,\r\n    \"propertyId\": 1,\r\n    \"parentId\": 3,\r\n    \"isField\": true,\r\n    \"cropCycleId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/regions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
