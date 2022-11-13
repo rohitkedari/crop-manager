@@ -4,15 +4,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const oauthRouter = require('./routes/oauth');
-const usersRouter = require('./routes/users');
-const organizationsRouter = require('./routes/organization');
-const cropsRouter = require('./routes/crop');
-const propertiesRouter = require('./routes/property');
-const regionsRouter = require('./routes/region');
-const cropCyclesRouter = require('./routes/cropCycle');
-
 const app = express();
 
 // view engine setup
@@ -25,14 +16,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/oauth', oauthRouter);
-app.use('/users', usersRouter);
-app.use('/organizations', organizationsRouter);
-app.use('/crops', cropsRouter);
-app.use('/properties', propertiesRouter);
-app.use('/regions', regionsRouter);
-app.use('/crop-cycles', cropCyclesRouter);
+// Configure api routes
+app.use('/api/v1', require('./api/v1'));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

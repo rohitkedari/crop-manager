@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 const OAuthServer = require('express-oauth-server');
-const OauthController = require('../controllers/oauthController');
-const CropCycleController = require('../controllers/cropCycleController');
+const OauthController = require('../../controllers/oauthController');
+const CropCycleController = require('../../controllers/cropCycleController');
 
 router.oauth = new OAuthServer({
   model: OauthController,

@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 const OAuthServer = require('express-oauth-server');
-const OauthController = require('../controllers/oauthController');
+const OauthController = require('../../controllers/oauthController');
 
 router.oauth = new OAuthServer({
   model: OauthController,
