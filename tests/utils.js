@@ -2,8 +2,7 @@ const OAuthUsersModel = require('../models').OAuthUsers;
 const OAuthTokensModel = require('../models').OAuthTokens;
 const OAuthClientsModel = require('../models').OAuthClients;
 
-module.exports.withLogin = async (
-  req,
+module.exports.getAuthToken = async (
   client = {
     clientId: 'client_dev2',
     clientSecret: 'client_dev_secret2',
@@ -41,5 +40,5 @@ module.exports.withLogin = async (
       userId: newUser.id,
     },
   });
-  return req.set('Authorization', `Bearer ${newAuthToken.token}`);
+  return `Bearer ${newAuthToken.accessToken}`;
 };
