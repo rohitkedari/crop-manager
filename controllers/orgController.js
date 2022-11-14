@@ -10,7 +10,7 @@ module.exports.getOrganization = function (req, res, next) {
 module.exports.createOrganization = function (req, res, next) {
   // TODO validate request body
   OrganizationService.createOrganization(req.body)
-    .then((org) => res.json(org))
+    .then((org) => res.status(201).json(org))
     .catch((error) => next(error));
 };
 

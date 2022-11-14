@@ -10,7 +10,7 @@ module.exports.getCropCycle = function (req, res, next) {
 module.exports.createCropCycle = function (req, res, next) {
   // TODO validate request body
   CropCycleService.createCropCycle(req.body)
-    .then((cropCycle) => res.json(cropCycle))
+    .then((cropCycle) => res.status(201).json(cropCycle))
     .catch((error) => next(error));
 };
 

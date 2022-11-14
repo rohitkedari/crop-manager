@@ -10,7 +10,7 @@ module.exports.getRegion = function (req, res, next) {
 module.exports.createRegion = async function (req, res, next) {
   // TODO validate logged in user and organization
   RegionService.createRegion(req.body)
-    .then((region) => res.json(region))
+    .then((region) => res.status(201).json(region))
     .catch((error) => {
       next(error);
     });

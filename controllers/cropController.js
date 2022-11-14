@@ -10,7 +10,7 @@ module.exports.getCrop = function (req, res, next) {
 module.exports.createCrop = function (req, res, next) {
   // TODO validate request body
   CropService.createCrop(req.body)
-    .then((crop) => res.json(crop))
+    .then((crop) => res.status(201).json(crop))
     .catch((error) => next(error));
 };
 

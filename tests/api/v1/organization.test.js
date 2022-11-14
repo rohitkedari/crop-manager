@@ -11,7 +11,7 @@ describe('Organization APIs', () => {
       const res = await withLogin(
         request(server).post('/api/v1/organizations').send(body)
       );
-      expect(res.status).toBe(200);
+      expect(res.status).toBe(201);
       expect(res.body).toHaveProperty('name', 'org1');
     });
   });

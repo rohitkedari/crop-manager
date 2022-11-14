@@ -10,7 +10,7 @@ module.exports.getProperty = function (req, res, next) {
 module.exports.createProperty = function (req, res, next) {
   // TODO validate request body
   PropertyService.createProperty(req.body)
-    .then((property) => res.json(property))
+    .then((property) => res.status(201).json(property))
     .catch((error) => next(error));
 };
 
