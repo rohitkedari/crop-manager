@@ -10,7 +10,8 @@
     "test": "cross-env NODE_ENV=test jest --testPathPattern='./tests/.*\\.test\\.js$' --detectOpenHandles --runInBand --forceExit",
     "db:create:test": "cross-env NODE_ENV=test npx sequelize-cli db:create",
     "db:migrate:test": "cross-env NODE_ENV=test npx sequelize-cli db:migrate",
-    "db:undo:test": "cross-env NODE_ENV=test npx sequelize-cli db:migrate:undo:all"
+    "db:undo:test": "cross-env NODE_ENV=test npx sequelize-cli db:migrate:undo:all",
+    "pretest": "cross-env NODE_ENV=test npm run db:undo:test && npm run db:migrate:test"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
