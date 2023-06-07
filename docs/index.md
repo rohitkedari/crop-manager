@@ -6,6 +6,9 @@ Asset resource is divided into 3 sub types.
 * **Types**- Defined as type of asset E.g., Compressor, Motor
 * **Asset** - Defined as instance of specific type E.g., Motor in gearbox.
 * **Properties** - Defined as properties of instances or default properties of types
+* **Types**- Defined as type of asset E.g., Compressor, Motor
+* **Asset** - Defined as instance of specific type E.g., Motor in gearbox.
+* **Properties** - Defined as properties of instances or default properties of types
 
 **Following are the important changes for Asset 2.0 services:**
 * Attributes are termed as properties.
