@@ -7,7 +7,7 @@ Asset resource is divided into 3 sub types.
 2. Asset Defined as instance of specific type E.g., Motor in gearbox.
 3. Properties Defined as properties of instances or default properties of types
 
-#### Following are the important changes for Asset 2.0 services:
+##### Following are the important changes for Asset 2.0 services:
 * Attributes are termed as properties.
 * The REST structures are changed to create more flexible APIs.
 * .NET core language is used for Asset 2.0
