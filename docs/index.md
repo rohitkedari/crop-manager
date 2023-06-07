@@ -1,22 +1,21 @@
-# Introduction
+## Introduction
 
 Asset-Service is a collection of assets that are linked with each other which forms a special hierarchy. This hierarchy is a systematic classification of business units, processes, systems and equipment into generic types based upon various factors such as location, use, etc.
 
 Asset resource is divided into 3 sub types.
-* **Types**- Defined as type of asset E.g., Compressor, Motor
-* **Asset** - Defined as instance of specific type E.g., Motor in gearbox.
-* **Properties** - Defined as properties of instances or default properties of types
-* **Types**- Defined as type of asset E.g., Compressor, Motor
-* **Asset** - Defined as instance of specific type E.g., Motor in gearbox.
-* **Properties** - Defined as properties of instances or default properties of types
+* 
+* Types - Defined as type of asset E.g., Compressor, Motor
+* Asset - Defined as instance of specific type E.g., Motor in gearbox.
+* Properties - Defined as properties of instances or default properties of types
 
 **Following are the important changes for Asset 2.0 services:**
+* 
 * Attributes are termed as properties.
 * The REST structures are changed to create more flexible APIs.
 * .NET core language is used for Asset 2.0
 * Supports pagination to fetch asset and hierarchy information
 
-# Features
+## Features
 * Extremely high number of nodes (75M approx.) will be supported for any asset.
 * As the scalability will increase, the APIs will be extremely high performant to match the same
 * Creating of multiple assets is supported i.e. bulk ingestion
@@ -36,5 +35,5 @@ Asset resource is divided into 3 sub types.
 * Introduced fetch latest timestamp from groups and fetch changed nodes/edges from groups based on timestamp APIs
 * Allows tenant creation only at the start of the service
 
-# Security consideration
+## Security consideration
 Data stored in Asset Service 2.0 is untrusted data. Consumer applications should not use the data as trusted source of information and should always pass responses through validations before using them inside any database queries/operations.
