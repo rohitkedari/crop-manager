@@ -3,13 +3,7 @@ kind: Component
 metadata:
   name: asset-service-2
   title: Asset Service 2.0
-  description: |
-    Asset-Service is a collection of assets that are linked with each other which forms a special hierarchy.|
-    This hierarchy is a systematic classification of
-    - business units
-    - processes
-    - systems
-    - equipment into generic types based upon various factors such as location, use, etc.
+  description: Asset-Service is a collection of assets that are linked with each other which forms a special hierarchy.
   tags:
     - java
     - data
