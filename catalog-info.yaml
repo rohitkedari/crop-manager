@@ -10,7 +10,8 @@ metadata:
     - processes
     - systems
     - equipment into generic types based upon various factors such as location, use, etc.
-  tags: java
+  tags:
+    - java
   annotations:
     github.com/project-slug: bh-ent-tech/arion-fs-assets-2.0
     backstage.io/techdocs-ref: dir:.
