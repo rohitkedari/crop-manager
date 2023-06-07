@@ -1,12 +1,27 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: crop-manager
+  name: asset-service-2
+  title: Asset Service 2.0
+  description: |
+    Asset-Service is a collection of assets that are linked with each other which forms a special hierarchy.|
+    This hierarchy is a systematic classification of
+    - business units
+    - processes
+    - systems
+    - equipment into generic types based upon various factors such as location, use, etc.
+  tags: java
   annotations:
-    github.com/project-slug: rohitkedari/crop-manager
+    github.com/project-slug: bh-ent-tech/arion-fs-assets-2.0
     backstage.io/techdocs-ref: dir:.
+  links:
+   - url: https://github.com/bh-ent-tech/arion-fs-assets-2.0
+     title: GitHub Repo
+     icon: github
 spec:
-  type: other
-  lifecycle: unknown
-  owner: team-b
+  type: service
+  lifecycle: production
+  owner: team-a
+  providesApis:
+    - artist-api
     
