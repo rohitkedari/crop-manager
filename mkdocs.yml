@@ -1,7 +1,10 @@
 site_name: 'example-docs'
 
 nav:
-  - Home: index.md
+  - Overview: index.md
+  - Architecture: architecture.md
+  - Performance Specifications: performance-specifications.md
+  - Release Information: release-information.md
 
 plugins:
   - techdocs-core
