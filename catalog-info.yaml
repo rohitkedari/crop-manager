@@ -4,7 +4,9 @@ metadata:
   name: crop-manager
   annotations:
     github.com/project-slug: rohitkedari/crop-manager
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: other
   lifecycle: unknown
   owner: team-b
+    
