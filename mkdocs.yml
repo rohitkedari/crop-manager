@@ -1,4 +1,7 @@
-site_name: 'example-docs'
+site_name: 'Asset Service 2.0'
+site_description: 'Main documentation for Asset Service features and platform APIs'
+repo_url: https://github.com/bh-ent-tech/arion-fs-assets-2.0
+edit_uri: edit/master/docs
 
 nav:
   - Overview: index.md
