@@ -15,7 +15,7 @@ Asset Service internally comprises of multiple components, some of them are show
 
 **PostgreSQL Database** – This is the cloud hosted actual storage of Asset Configuration Information.
 
-## Concepts in Asset Service – 
+## Concepts in Asset Service 
 **Node Types:** Every asset in hierarchy is represented as a node, each node can have a type associated with it: E.g., A “Compressor” will have a node with “Compressor” as its type.
 
 **Properties:** Every node further have properties associated with it. E.g., A “Compressor" having a rated rpm of 3000 is a property on the node with the value mentioned.
