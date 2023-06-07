@@ -2,17 +2,16 @@
 
 Asset-Service is a collection of assets that are linked with each other which forms a special hierarchy. This hierarchy is a systematic classification of business units, processes, systems and equipment into generic types based upon various factors such as location, use, etc.
 
-Asset resource is divided into 3 sub types.
+## Features
 * Extremely high number of nodes (75M approx.) will be supported for any asset.
 * As the scalability will increase, the APIs will be extremely high performant to match the same
 * Creating of multiple assets is supported i.e. bulk ingestion
 
-**Following are the important changes for Asset 2.0 services:**
-* 
-* Attributes are termed as properties.
-* The REST structures are changed to create more flexible APIs.
-* .NET core language is used for Asset 2.0
-* Supports pagination to fetch asset and hierarchy information
+## Features
+* Extremely high number of nodes (75M approx.) will be supported for any asset.
+* As the scalability will increase, the APIs will be extremely high performant to match the same
+* Creating of multiple assets is supported i.e. bulk ingestion
+* Hierarchy model will consist of parent, child and sibling relation. With such model complicated graphs can be created in an easy way
 
 ## Features
 * Extremely high number of nodes (75M approx.) will be supported for any asset.
