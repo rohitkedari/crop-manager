@@ -4,7 +4,7 @@ metadata:
   name: asset-ingestion-apis
   description: Provided APIs to inject asset data to asset service
   tags:
-    - REST
+    - rest
   links:
     - url: https://github.com/swagger-api/swagger-petstore
       title: GitHub Repo
@@ -23,7 +23,7 @@ metadata:
   name: asset-fetchData-apis
   description: Provided APIs to fetch asset data from asset service
   tags:
-    - REST
+    - rest
   links:
     - url: https://github.com/swagger-api/swagger-petstore
       title: GitHub Repo
@@ -56,7 +56,7 @@ spec:
   type: service
   lifecycle: production
   owner: team-a
-  system: SPARQ
+  system: sparq
   providesApis:
     - asset-ingestion-apis
     - asset-fetchData-apis
