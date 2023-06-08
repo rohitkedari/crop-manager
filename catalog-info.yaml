@@ -1,4 +1,14 @@
 apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: asset-service-db
+  description: Stores Asset data
+spec:
+  type: database
+  owner: team-a
+  system: sparq
+---
+apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: asset-ingestion-apis
