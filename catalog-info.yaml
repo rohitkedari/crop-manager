@@ -26,6 +26,7 @@ spec:
   type: openapi
   lifecycle: production
   owner: team-a
+  system: sparq
   definition: |
     openapi: "3.0.0"
     info:
@@ -54,6 +55,7 @@ spec:
   type: openapi
   lifecycle: production
   owner: team-a
+  system: sparq
   definition: |
     openapi: "3.0.0"
     info:
