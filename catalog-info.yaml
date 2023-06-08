@@ -1,4 +1,42 @@
 apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: asset-ingestion-apis
+  description: Provided APIs to inject asset data to asset service
+  tags:
+    - REST
+  links:
+    - url: https://github.com/swagger-api/swagger-petstore
+      title: GitHub Repo
+      icon: github
+    - url: https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore.yaml
+      title: API Spec
+      icon: code
+spec:
+  type: openapi
+  lifecycle: production
+  owner: team-a
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: asset-fetchData-apis
+  description: Provided APIs to fetch asset data from asset service
+  tags:
+    - REST
+  links:
+    - url: https://github.com/swagger-api/swagger-petstore
+      title: GitHub Repo
+      icon: github
+    - url: https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore.yaml
+      title: API Spec
+      icon: code
+spec:
+  type: openapi
+  lifecycle: production
+  owner: team-a
+---
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: asset-service-2
@@ -18,6 +56,7 @@ spec:
   type: service
   lifecycle: production
   owner: team-a
+  system: SPARQ
   providesApis:
-    - artist-api
-    
+    - asset-ingestion-apis
+    - asset-fetchData-apis
