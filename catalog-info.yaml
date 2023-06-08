@@ -16,6 +16,15 @@ spec:
   type: openapi
   lifecycle: production
   owner: team-a
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: Swagger Petstore
+      license:
+        name: MIT
+    servers:
+      - url: http://petstore.swagger.io/v1
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -35,6 +44,15 @@ spec:
   type: openapi
   lifecycle: production
   owner: team-a
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: Swagger Petstore
+      license:
+        name: MIT
+    servers:
+      - url: http://petstore.swagger.io/v1
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
