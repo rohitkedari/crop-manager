@@ -11,3 +11,4 @@ nav:
 
 plugins:
   - techdocs-core
+  - git-revision-date-localized
