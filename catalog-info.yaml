@@ -28,7 +28,7 @@ spec:
   owner: team-a
   system: sparq
   definition:
-    $text: https://github.com/APIs-guru/openapi-directory/blob/main/APIs/archive.org/wayback/1.0.0/openapi.yaml
+    $json: ./api/v1/docs/api.json
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
